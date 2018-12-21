@@ -1,0 +1,14 @@
+{
+  "name": "naflix",
+  "version": "1.0.0",
+  "description": "Cloning Netflix with Vanila and NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jeongho Heo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
