@@ -1,0 +1,23 @@
+header.header
+    .header__column
+        a(href=routes.home)
+            h1.header__home #{siteName}
+    .header__column
+        ul
+            li
+                a(href=`/videos${routes.originals}`)
+                    h3 Originals
+            li
+                a(href=`/videos${routes.trailers}`)
+                    h3 Trailers
+    .headr__column
+        ul
+            li
+                a(href=`/videos${routes.search}`)
+                    h3 Search
+            li
+                select(name="links", onchange="window.location.href=this.value;")
+                    option(value="#", selected) User
+                    option(value=`/users${routes.userProfile}`) Profile
+                    option(value=routes.logout)
+                        a(href="#") Logout

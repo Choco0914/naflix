@@ -2,7 +2,7 @@ import express from "express";
 import routes from "../routes";
 import {
   users,
-  userDetail,
+  userProfile,
   editProfile,
   changePassword
 } from "../controllers/userController";
@@ -10,7 +10,7 @@ import {
 const userRouter = express.Router();
 
 userRouter.get(routes.home, users);
-userRouter.get(routes.userDetail, userDetail);
+userRouter.get(routes.userProfile, userProfile);
 userRouter.get(routes.editProfile, editProfile);
 userRouter.get(routes.changePassword, changePassword);
 

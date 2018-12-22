@@ -1,10 +1,19 @@
 import express from "express";
 import routes from "../routes";
-import { show, videos } from "../controllers/videoController";
+import {
+  show,
+  videos,
+  originals,
+  trailers,
+  search
+} from "../controllers/videoController";
 
 const videoRouter = express.Router();
 
-videoRouter.get(routes.videos, videos);
+videoRouter.get(routes.home, videos);
+videoRouter.get(routes.search, search);
 videoRouter.get(routes.show, show);
+videoRouter.get(routes.originals, originals);
+videoRouter.get(routes.trailers, trailers);
 
 export default videoRouter;
