@@ -13,8 +13,8 @@ header.header
     .headr__column
         ul
             li
-                a(href=`/videos${routes.search}`)
-                    h3 Search
+                form(action=`/videos${routes.search}` method="get")
+                    input(type="text", placeholder="비디오 검색...", name="video")
             li
                 select(name="links", onchange="window.location.href=this.value;")
                     option(value="#", selected) User
