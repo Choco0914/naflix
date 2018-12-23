@@ -1,13 +1,28 @@
 import express from "express";
 import routes from "../routes";
-import { home, search } from "../controllers/videoController";
-import { join, login, logout } from "../controllers/userController";
+import { home } from "../controllers/videoController";
+import {
+  logout,
+  postJoin,
+  getJoin,
+  getLogin,
+  postLogin
+} from "../controllers/userController";
+import { homeIsAuthenticatedMiddleware as check } from "../middlewares/isAuthenticatedMiddlewares";
+import app from "../app";
 
 const globalRouter = express.Router();
 
-globalRouter.get(routes.home, home);
-globalRouter.get(routes.join, join);
-globalRouter.get(routes.login, login);
-globalRouter.get(routes.logout, logout);
+// Join
+globalRouter.get(routes.join, check, getJoin);
+globalRouter.post(routes.join, check, postJoin);
+
+// Login
+globalRouter.get(routes.login, check, getLogin);
+globalRouter.post(routes.login, check, postLogin);
+
+// Home
+globalRouter.get(routes.home, check, home);
+globalRouter.get(routes.logout, check, logout);
 
 export default globalRouter;

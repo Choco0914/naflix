@@ -1,7 +1,12 @@
 extends layouts/main.pug
+include mixins/videoBlock
 
 block content
     .videos
         each item in naflix
-            h1= item.title
-            p= item.description
+            +videoBlock({
+                id: item.id,
+                title: item.title,
+                description: item.description,
+                videoFile: item.videoFile
+            })

@@ -18,6 +18,5 @@ header.header
             li
                 select(name="links", onchange="window.location.href=this.value;")
                     option(value="#", selected) User
-                    option(value=`/users${routes.userProfile}`) Profile
-                    option(value=routes.logout)
-                        a(href="#") Logout
+                    option(value=`/users${routes.userProfile(user.id)}`) Profile
+                    option(value=routes.logout) Logout

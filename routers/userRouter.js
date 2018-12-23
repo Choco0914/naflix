@@ -1,7 +1,6 @@
 import express from "express";
 import routes from "../routes";
 import {
-  users,
   userProfile,
   editProfile,
   changePassword
@@ -11,6 +10,6 @@ const userRouter = express.Router();
 
 userRouter.get(routes.editProfile, editProfile);
 userRouter.get(routes.changePassword, changePassword);
-userRouter.get(routes.userProfile, userProfile);
+userRouter.get(routes.userProfile(), userProfile);
 
 export default userRouter;

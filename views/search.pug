@@ -1,5 +1,14 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
     .search__header
         h3 다음과 관련된 콘텐츠: #{searchingBy}
+    .search__videos
+        each item in naflix
+            +videoBlock({
+                id: item.id,
+                title: item.title,
+                description: item.description,
+                videoFile: item.videoFile
+            })

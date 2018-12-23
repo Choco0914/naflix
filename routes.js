@@ -17,7 +17,7 @@ const CHANGE_PASSWORD = "/change-password";
 const VIDEOS = "/videos";
 const TRAILERS = "/trailers";
 const ORIGINALS = "/originals";
-const SHOW = "/:id/show";
+const SHOW = "/:id";
 
 const routes = {
   home: HOME,
@@ -26,11 +26,23 @@ const routes = {
   logout: LOGOUT,
   search: SEARCH,
   users: USERS,
-  userProfile: USER_PROFILE,
+  userProfile: id => {
+    if (id) {
+      return `/${id}`;
+    } else {
+      return USER_PROFILE;
+    }
+  },
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   videos: VIDEOS,
-  show: SHOW,
+  show: id => {
+    if (id) {
+      return `/videos/${id}`;
+    } else {
+      return SHOW;
+    }
+  },
   trailers: TRAILERS,
   originals: ORIGINALS
 };

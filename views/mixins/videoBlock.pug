@@ -1,0 +1,5 @@
+mixin videoBlock(video = {})
+    .videoBlock
+        h1 재생목록
+        a(href=routes.show(video.id))
+            video.videoBlock__thumbnail(src=video.videoFile, controls=true)
