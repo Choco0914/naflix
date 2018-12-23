@@ -3,8 +3,8 @@
 Cloning Netflix with Vanila and NodeJS
 
 - [ ] Home
-- [ ] Join
-- [ ] Login
+- [x] Join
+- [x] Login
 - [x] Search
 - [ ] Profile
 - [ ] Change Password
