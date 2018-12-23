@@ -1,4 +1,7 @@
 extends layouts/main.pug
 
 block content
-    p Here is Videos
+    .videos
+        each item in naflix
+            h1= item.title
+            p= item.description
