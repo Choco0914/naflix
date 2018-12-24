@@ -1,5 +1,3 @@
-import { naflix } from "../db";
-
 export const home = (req, res) => res.render("home", { pageTitle: "Home" });
 
 export const videos = (req, res) => {

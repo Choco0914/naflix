@@ -1,29 +1,18 @@
-export const naflix = [
+import mongoose from "mongoose";
+import "./config";
+
+mongoose.connect(
+  process.env.MONGO_URL,
   {
-    id: 23232,
-    title: "Video Awesome",
-    description: "This is something I love",
-    videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-  },
-  {
-    id: 52355,
-    title: "Video look",
-    description: "This is something I love",
-    videoFile: "https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4"
-  },
-  {
-    id: 7675732,
-    title: "Video super",
-    description: "This is something I love",
-    videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
-  },
-  {
-    id: 3434252,
-    title: "Video Awesome",
-    description: "This is something I love",
-    videoFile:
-      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+    useNewUrlparser: true,
+    useFindAndModify: false
   }
-];
+);
+
+const db = mongoose.connection;
+
+const handleOpen = () => console.log("✅  Connected to DB");
+const handleError = error => console.log(`❌ Error on DB Connection:${error}`);
+
+db.once("open", handleOpen);
+db.on("error", handleError);
